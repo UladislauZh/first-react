@@ -5,22 +5,32 @@ type AccordionPropsType = {
   collapsed: boolean;
 };
 
+// function Accordion(props: AccordionPropsType) {
+//   console.log("Accordion rendering");
+//   if (props.collapsed === true) {
+//     return (
+//       <div>
+//         <AccordionTittle title={props.titleValue} />
+//         <AccordionBody />
+//       </div>
+//     );
+//   } else {
+//     return (
+//       <div>
+//         <AccordionTittle title={props.titleValue} />{" "}
+//       </div>
+//     );
+//   }
+// }
+
 function Accordion(props: AccordionPropsType) {
   console.log("Accordion rendering");
-  if (props.collapsed === true) {
-    return (
-      <div>
-        <AccordionTittle title={props.titleValue} />
-        <AccordionBody />
-      </div>
-    );
-  } else {
-    return (
-      <div>
-        <AccordionTittle title={props.titleValue} />{" "}
-      </div>
-    );
-  }
+  return (
+    <div>
+      <AccordionTittle title={props.titleValue} />
+      {!props.collapsed && <AccordionBody />}
+    </div>
+  );
 }
 
 type AccordionTittlePropsType = {
